@@ -6,6 +6,14 @@ app = FastAPI()
 def root():
     return {"status": "ok"}
 
+
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "fastapi-backend"
+    }
+
 num1 = 10
 num2 = 20
 
